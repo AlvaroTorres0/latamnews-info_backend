@@ -1,0 +1,13 @@
+{
+  "title": "Apuesta por la tecnología: Gurú financiero revela sus predicciones de inversión en nuevas plataformas",
+  "summary": "Analista financiero con más de 50 años de experiencia adelanta las tendencias de inversión en nuevas tecnologías a corto y mediano plazo.",
+  "image": {
+    "url": "https://cdn.eye-promos.shop/assets/hero.webp",
+    "image_description": "Traders buscan diversificar su cartera de inversiones."
+  },
+  "created_at": { "$date": { "$numberLong": "1755616139000" } },
+  "target_country": "latam",
+  "tags": ["Inversiones", "Tecnologías", "Tendencias"],
+  "topics": ["Finanzas"],
+  "author": "Fernando Aguirre"
+}
