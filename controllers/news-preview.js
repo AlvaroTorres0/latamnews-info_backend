@@ -15,10 +15,8 @@ export const getLimitedNewsPreview = async (req, res) => {
 
     const totalCount = await NewsPreview.countDocuments();
 
-    const hasMore = skip + limit < totalCount;
-
     res.status(200).json({
-      data: newsPreview,
+      data: newsPreview.reverse(),
       pagination: {
         limit,
         skip,
