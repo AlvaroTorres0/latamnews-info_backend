@@ -1,7 +1,4 @@
-import express from 'express';
 import NewsPreview from '../models/news-preview.js';
-
-const router = express.Router();
 
 export const getLimitedNewsPreview = async (req, res) => {
   try {
@@ -39,4 +36,33 @@ export const getLimitedNewsPreview = async (req, res) => {
   }
 };
 
-export default router;
+export const getNewPreviewById = async (req, res) => {
+  try {
+    const { id } = req.params;
+
+    const newPreview = await NewsPreview.findById(id).lean();
+
+    if (!newPreview) {
+      return res.status(404).json({
+        message: 'New preview not found',
+      });
+    }
+
+    res.status(200).json(newPreview);
+  } catch (error) {
+    console.error('Error trying to get new preview by id:', error);
+    res.status(500).json({
+      message: 'Internal server error',
+      error: process.env.NODE_ENV === 'development' ? error.message : undefined,
+    });
+  }
+};
+
+export const findNewsPreviewById = async id => {
+  try {
+    return await NewsPreview.findById(id).lean();
+  } catch (error) {
+    console.error('Error finding news preview:', error);
+    return null;
+  }
+};

@@ -1,9 +1,10 @@
 import express from 'express';
 
-import { getLimitedNewsPreview } from '../controllers/news-preview.js';
-
 const router = express.Router();
+import newsPreviewRoutes from './news-preview-routes.js';
+import newsContentRoutes from './news-content-routes.js';
 
-router.get('/limited', getLimitedNewsPreview);
+router.use('/news-preview', newsPreviewRoutes);
+router.use('/news-content', newsContentRoutes);
 
 export default router;

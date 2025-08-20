@@ -5,7 +5,7 @@ import connectDB from './db/index.js';
 
 const PORT = 5000;
 
-const DB_URL_CONNECTION = 'mongodb+srv://revorise-devs:fa9GoJ9aYOoqpKLj@revorise-newspaper.rlkhnr3.mongodb.net/latamnews?retryWrites=true&w=majority&appName=Revorise-NewsPaper';
+const DB_URL_CONNECTION = process.env.MONGO_URI || '';
 
 connectDB(DB_URL_CONNECTION).then(() => {
   app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
