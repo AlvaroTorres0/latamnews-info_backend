@@ -12,7 +12,7 @@ export const getLimitedNewsPreview = async (req, res) => {
     }
 
     // Get the last news preview added to the collection
-    const lastNewsPreview = await NewsPreview.find().sort({ created_at: 1 }).limit(limit).skip(skip).lean();
+    const lastNewsPreview = await NewsPreview.find().sort({ created_at: -1 }).limit(limit).skip(skip).lean();
     const totalCount = await NewsPreview.countDocuments();
 
     res.status(200).json({
