@@ -85,7 +85,7 @@ export const publishNewPreview = async (req, res) => {
       tags,
       topics,
       author,
-      article_date: new Date(Date.UTC(y, mo - 1, d, 12, 0, 0, 0)),
+      article_date: new Date(),
     });
 
     await newPreview.save();
