@@ -66,7 +66,11 @@ export const findNewsPreviewById = async id => {
 };
 
 export const publishNewPreview = async (req, res) => {
-  console.log(req.body.data);
+  if (!req.body.data) {
+    return res.status(400).json({
+      message: 'No data provided',
+    });
+  }
   try {
     const { title, summary, image, created_at, target_country, tags, topics, author } = req.body.data;
 
