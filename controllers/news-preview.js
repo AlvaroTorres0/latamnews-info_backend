@@ -11,12 +11,11 @@ export const getLimitedNewsPreview = async (req, res) => {
       });
     }
 
-    const newsPreview = await NewsPreview.find().limit(limit).skip(skip).lean();
-
+    const lastNewsPreview = await NewsPreview.find().sort({ created_at: -1 }).limit(limit).lean();
     const totalCount = await NewsPreview.countDocuments();
 
     res.status(200).json({
-      data: newsPreview.reverse(),
+      data: lastNewsPreview,
       pagination: {
         limit,
         skip,
