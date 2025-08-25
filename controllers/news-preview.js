@@ -64,3 +64,31 @@ export const findNewsPreviewById = async id => {
     return null;
   }
 };
+
+export const publishNewPreview = async (req, res) => {
+  console.log(req.body.data);
+  try {
+    const { title, summary, image, created_at, target_country, tags, topics, author } = req.body.data;
+
+    const newPreview = new NewsPreview({
+      title,
+      summary,
+      image,
+      created_at,
+      target_country,
+      tags,
+      topics,
+      author,
+    });
+
+    await newPreview.save();
+
+    res.status(200).json(newPreview._id);
+  } catch (error) {
+    console.error('Error trying to publish new news preview:', error);
+    res.status(500).json({
+      message: 'Internal server error',
+      error: process.env.NODE_ENV === 'development' ? error.message : undefined,
+    });
+  }
+};
