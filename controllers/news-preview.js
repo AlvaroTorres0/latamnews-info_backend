@@ -72,18 +72,18 @@ export const publishNewPreview = async (req, res) => {
     });
   }
   try {
-    const { title, summary, image, created_at, target_country, tags, topics, author } = req.body.data;
+    const { title, summary, image, target_country, tags, topics, author, article_date } = req.body.data;
 
     const newPreview = new NewsPreview({
       title,
       summary,
       image,
-      created_at,
+      created_at: new Date(),
       target_country,
       tags,
       topics,
       author,
-      article_date: new Date(),
+      article_date: article_date,
     });
 
     await newPreview.save();
