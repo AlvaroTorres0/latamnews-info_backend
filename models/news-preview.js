@@ -12,6 +12,7 @@ const newsPreviewSchema = mongoose.Schema({
   tags: [String],
   topics: [String],
   author: String,
+  article_date: Date,
 });
 
 const NewsPreview = mongoose.model('NewsPreview', newsPreviewSchema, 'news-preview');
