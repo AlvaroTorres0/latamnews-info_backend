@@ -41,3 +41,42 @@ export const getFullNewContent = async (req, res) => {
     });
   }
 };
+
+export const createNewContent = async (req, res) => {
+  if (!req.body.data) {
+    return res.status(400).json({
+      message: 'No data provided',
+    });
+  }
+  try {
+    const { id_new_preview, title, summary, data } = req.body;
+
+    const newPreview = await findNewsPreviewById(id_new_preview);
+
+    const newContent = new NewsContent({
+      id_new_preview,
+      header: {
+        title: title,
+        summary: summary,
+        tags: newPreview.tags,
+        topics: newPreview.topics,
+        author: newPreview.author,
+        post_date: newPreview.created_at,
+        target_country: newPreview.target_country,
+      },
+      data,
+    });
+
+    await newContent.save();
+
+    res.status(201).json({
+      message: 'Content inserted successfully',
+    });
+  } catch (error) {
+    console.error('Error trying to insert new content:', error);
+    res.status(500).json({
+      message: 'Internal server error',
+      error: process.env.NODE_ENV === 'development' ? error.message : undefined,
+    });
+  }
+};

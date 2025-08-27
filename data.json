@@ -1,15 +1,49 @@
 {
-  "data": {
-    "title": "Las corporaciones más buscadas para invertir en sus acciones en 2025",
-    "summary": "Un estudio de BestBrokers reveló las empresas más solicitadas bajo el valor de sus acciones.",
-    "image": {
-      "url": "https://cdn.latamnews.info/200825-global-trends-stocks-1/img.webp",
-      "image_description": "Analizar el mercado bursátil es fundamental para comprender las tendencias globales con mayor potencial de expansión."
+  "id_new_preview": { "$oid": "68acb6a61a8ae734282ff458" },
+  "header": {
+    "title": "Aranceles de Trump frenan inversión en la industria del transporte de carga",
+    "summary": "El presidente de la Cámara Nacional del Autotransporte de Carga (Canacar), Miguel Ángel Martínez Millán, advirtió que la posible imposición de aranceles por parte del gobierno de Estados Unidos tendría un efecto severo en la economía mexicana, pero también generaría perjuicios en el propio mercado estadounidense."
+  },
+  "body": [
+    {
+      "type": "image",
+      "data": { "url": "https://cdn.latamnews.info/200825-inversiones-camiones-1/img.webp", "image_description": "Aranceles de Trump impactan intensamente a la economía de México." }
     },
-    "created_at": "2025-03-17T12:16:12.000Z",
-    "target_country": "latam",
-    "tags": ["Mercados financieros", "Acciones", "Inversiones"],
-    "topics": ["Finanzas"],
-    "author": "Brenda Hernández"
-  }
+    {
+      "type": "paragraph",
+      "content": "Los constantes anuncios sobre tarifas del presidente norteamericano, Donald Trump, no solo mantienen en “pausa” las inversiones en el sector de transporte de carga en México, sino que, según Martínez Millán, “nos tiene preocupados” por el daño que ocasionarían en una industria altamente dependiente del comercio bilateral."
+    },
+    {
+      "type": "paragraph",
+      "content": "“Es un hecho que estamos inquietos; seguimos a la expectativa de cuál será la cifra final de los aranceles, porque hablar de un 25% es absurdo. Incluso un solo dígito de incremento sería crítico, muy riesgoso, pues muchas industrias dependen en gran medida del intercambio México-Estados Unidos”, señaló el dirigente de los transportistas."
+    },
+    {
+      "type": "paragraph",
+      "content": "En entrevista exclusiva, el empresario reiteró que la aplicación de dichos aranceles tendrían un efecto muy negativo en la economía nacional, aunque también repercutirían en Estados Unidos."
+    },
+    {
+      "type": "paragraph",
+      "content": "Explicó que cualquier impuesto de este tipo se refleja en inflación: un automóvil o producto que sube de precio impacta directamente al consumidor final. “Estamos en un escenario muy delicado”, enfatizó."
+    },
+    {
+      "type": "paragraph",
+      "content": "El presidente de la Canacar añadió que Trump no solo mantiene en vilo a la industria del transporte, sino a toda la economía, ya que también se han endurecido los procesos en los cruces fronterizos. “Las revisiones ahora son más largas y nos representan el doble o incluso el triple de tiempo en filas para trasladar mercancías”, apuntó."
+    },
+    {
+      "type": "image",
+      "data": { "url": "https://cdn.latamnews.info/200825-inversiones-camiones-1/img1.webp", "image_description": "Aranceles estadounidenses frenan inversión en la industria del autotransporte." }
+    },
+    {
+      "type": "paragraph",
+      "content": "Martínez Millán afirmó que estas amenazas mantienen congeladas las inversiones. “Nadie se atreve en estas condiciones. Si alguien planeaba comprar cinco, veinte o cincuenta camiones, se frena al tener una espada que puede caer en cualquier momento sin saber de qué tamaño será”, expresó."
+    },
+    {
+      "type": "paragraph",
+      "content": "Indicó además que el mensaje del gobierno mexicano se enfoca en fortalecer lo “Hecho en México” y generar empleo para los connacionales que retornan de EE.UU. No obstante, el factor decisivo será la determinación final sobre los aranceles. “Cuando se fije el porcentaje, ahí sí todos tendremos que apresurarnos y redoblar esfuerzos”, comentó."
+    },
+    {
+      "type": "paragraph",
+      "content": "Martínez Millán reconoció que el sector transporte arrastra una problemática de fondo: la antigüedad de su parque vehicular. Esto, aseguró, incrementa la incertidumbre sobre si se deben realizar compras o renovar flota en medio de la actual coyuntura."
+    }
+  ]
 }
