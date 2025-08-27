@@ -13,6 +13,7 @@ const newsPreviewSchema = mongoose.Schema({
   topics: [String],
   author: String,
   article_date: Date,
+  path: String,
 });
 
 const NewsPreview = mongoose.model('NewsPreview', newsPreviewSchema, 'news-preview');

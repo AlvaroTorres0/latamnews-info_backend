@@ -72,7 +72,7 @@ export const publishNewPreview = async (req, res) => {
     });
   }
   try {
-    const { title, summary, image, target_country, tags, topics, author, article_date } = req.body.data;
+    const { title, summary, image, target_country, tags, topics, author, article_date, path } = req.body.data;
 
     const newPreview = new NewsPreview({
       title,
@@ -84,6 +84,7 @@ export const publishNewPreview = async (req, res) => {
       topics,
       author,
       article_date: article_date,
+      path,
     });
 
     await newPreview.save();
