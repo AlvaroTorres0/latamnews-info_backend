@@ -4,6 +4,7 @@ export const getLimitedNewsPreview = async (req, res) => {
   try {
     const limit = Math.min(parseInt(req.query.limit) || 2, 50);
     const skip = Math.max(parseInt(req.query.skip) || 0, 0);
+    const topic = req.query.topic;
 
     if (isNaN(limit) || isNaN(skip)) {
       return res.status(400).json({
@@ -11,9 +12,9 @@ export const getLimitedNewsPreview = async (req, res) => {
       });
     }
 
-    // Get the last news preview added to the collection
-    const lastNewsPreview = await NewsPreview.find().sort({ created_at: -1 }).limit(limit).skip(skip).lean();
-    const totalCount = await NewsPreview.countDocuments();
+    const query = topic ? { topics: { $in: [topic] } } : {};
+
+    const [lastNewsPreview, totalCount] = await Promise.all([NewsPreview.find(query).sort({ created_at: -1 }).limit(limit).skip(skip).lean(), NewsPreview.countDocuments(query)]);
 
     res.status(200).json({
       data: lastNewsPreview,
@@ -92,6 +93,30 @@ export const publishNewPreview = async (req, res) => {
     res.status(200).json(newPreview._id);
   } catch (error) {
     console.error('Error trying to publish new news preview:', error);
+    res.status(500).json({
+      message: 'Internal server error',
+      error: process.env.NODE_ENV === 'development' ? error.message : undefined,
+    });
+  }
+};
+
+export const getNewsPreviewByTopic = async (req, res) => {
+  try {
+    const { topic } = req.params;
+
+    const newPreview = await NewsPreview.find({ topics: { $in: [topic] } })
+      .sort({ created_at: -1 })
+      .lean();
+
+    if (!newPreview) {
+      return res.status(404).json({
+        message: 'New preview not found',
+      });
+    }
+
+    res.status(200).json(newPreview);
+  } catch (error) {
+    console.error('Error trying to get new preview by topic:', error);
     res.status(500).json({
       message: 'Internal server error',
       error: process.env.NODE_ENV === 'development' ? error.message : undefined,
