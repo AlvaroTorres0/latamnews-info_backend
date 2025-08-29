@@ -40,7 +40,7 @@ export const publishNewSuccessStory = async (req, res) => {
     });
   }
   try {
-    const { title, summary, image, target_country, tags, topics, author, article_date, path } = req.body.data;
+    const { title, summary, image, target_country, tags, author, article_date, path } = req.body.data;
 
     const newSuccessStory = new SuccessStories({
       title,
@@ -49,7 +49,7 @@ export const publishNewSuccessStory = async (req, res) => {
       created_at: new Date(),
       target_country,
       tags,
-      topics,
+      topics: ['historias-de-exito'],
       author,
       article_date: article_date,
       path,

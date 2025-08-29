@@ -10,7 +10,7 @@ const successStoriesSchema = mongoose.Schema({
   created_at: Date,
   target_country: String,
   tags: [String],
-  topics: ['historias-de-exito'],
+  topics: [String],
   author: String,
   article_date: Date,
   path: String,
